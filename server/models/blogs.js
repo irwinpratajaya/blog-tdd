@@ -5,7 +5,8 @@ let blogSchema = Schema({
   admin: String,
   user: String,
   title: String,
-  content: String
+  content: String,
+  slug: String
 }, {
   timestamps: true
 })

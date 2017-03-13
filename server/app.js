@@ -5,13 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+// var index = require('./routes/index');
+// var users = require('./routes/users');
 var blog = require('./routes/blog');
 
 var mongoose = require('mongoose') // harus di inisialisasi manual
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/todo') // harus di inisialisasi manual
+mongoose.connect('mongodb://localhost/blog') // harus di inisialisasi manual
 
 
 var app = express();
@@ -30,8 +30,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
-app.use('/', index);
-app.use('/users', users);
+// app.use('/', index);
+// app.use('/users', users);
 app.use('/blog', blog);
 
 // catch 404 and forward to error handler
